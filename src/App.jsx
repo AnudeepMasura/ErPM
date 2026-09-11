@@ -53,7 +53,7 @@ export default function App() {
   }, []);
 
   if (page === "login") return <Login />;
-  if (page === "setup") return <Setup />;
+  if (page === "signup") return <Signup />;
   if (page === "dashboard" || navItems.some(x => x[0] === page)) return <Dashboard page={page} />;
   if (["profile", "announcements", "tc"].includes(page)) return <Dashboard page={page} />;
   return <Login />;
@@ -109,9 +109,9 @@ function Login() {
   );
 }
 
-function Setup() {
+function Signup() {
   const [step, setStep] = useState(1);
-  const submit = e => { e.preventDefault(); alert("Signup and setup completed successfully!"); go("login"); };
+  const submit = e => { e.preventDefault(); alert("Signup completed successfully!"); go("login"); };
 
   return (
     <div className="public-page">
